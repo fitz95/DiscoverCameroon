@@ -33,10 +33,10 @@ const Login = () => {
     client.createIfNotExists(doc)
       .then((res)=>{
         navigate('/', {replace: true})
-        console.log(`${name} as a user, and his unique id is ${sub} `)
+        console.log(`${sub} as a user, and his unique id is ${sub} `)
       })    
   }
-  const googleResponsefail=(response)=>{
+  const googleResponseFail=(response)=>{
     console.log(response);
   }
   return (
@@ -72,7 +72,7 @@ const Login = () => {
                   </button>
                 )}
                 onSuccess={googleResponse}
-                onFailure={googleResponse}
+                onFailure={googleResponseFail}
                 cookiePolicy="single_host_origin"
               />
               </GoogleOAuthProvider>
