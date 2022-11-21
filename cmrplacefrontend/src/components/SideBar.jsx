@@ -61,10 +61,11 @@ const Sidebar = ({ user, closeToggle }) => {
         >
           <img src={user.image} className='w-10 h-10 rounded-full' alt='user-profile' />
           <p>{user.userName}</p>
+          <IoIosArrowForward />
         </Link>
       )}
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar
