@@ -100,7 +100,16 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   className='bg-white flex items-center gap-2 text-black text-sm font-bold p-2 pl-4 pr-4 rounded-full opacity-70 hover:100 hover: shadow-md'
                 >
                   <BsFillArrowUpRightCircleFill />
-                  {(new URL(destination)).hostname.replace('www.', '')}
+                  {
+                  function isValidUrl(destination) {
+                    try {
+                      new URL(destination);
+                      return (new URL(destination)).hostname.replace('www.', '');
+                    } catch (err) {
+                      return destination;
+                    }
+                  }
+                  }
                 </a>
               )}
               {postedBy?._id === user.sub && (
