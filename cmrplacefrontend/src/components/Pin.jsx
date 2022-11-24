@@ -101,14 +101,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                 >
                   <BsFillArrowUpRightCircleFill />
                   {
-                  function isValidUrl(destination) {
-                    try {
-                      new URL(destination);
-                      return (new URL(destination)).hostname.replace('www.', '');
-                    } catch (err) {
-                      return destination;
-                    }
-                  }
+                    destination.length > 15? `${destination.slice(0,15)}...`:destination 
                   }
                 </a>
               )}
