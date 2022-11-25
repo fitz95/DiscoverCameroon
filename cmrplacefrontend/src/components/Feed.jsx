@@ -15,11 +15,13 @@ const {categoryId} = useParams();
   useEffect(() => {
     setLoading(true)
     if(categoryId){
+      console.log('executing the cat')
       const categoryQuery = searchCategoryQuery(categoryId);
 
       client.fetch(categoryQuery)
          .then((data)=>{
           setPins(data);
+          console.log('after the query')
           setLoading(false)
          })
     }else{
@@ -41,6 +43,8 @@ const {categoryId} = useParams();
       <Spinner message={`We are adding new  ideas to your feed!`} />
     );
   }
+  console.log(pins)
+  if(!pins?.length) return <h2>No pins Available </h2>
   return (
     <div>
         {pins && <MasonryLayout pins={pins} />}

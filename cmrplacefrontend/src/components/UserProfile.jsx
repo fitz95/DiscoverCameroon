@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
 import { client } from '../client';
 import MasonryLayout from './MasonryLayout';
-import { FcLightAtTheEndOfTunnel } from 'react-icons/fc';
+
 import { googleLogout } from '@react-oauth/google';
 
 
